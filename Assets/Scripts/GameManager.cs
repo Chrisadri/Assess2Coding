@@ -4,12 +4,16 @@ using System.Collections;
 
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
 using Photon.Pun;
 using Photon.Realtime;
+using Photon.Pun.Demo.PunBasics;
 
+
+// NEEDS TO ADD SCORING TIMER TO THIS, THEN [PUN RPC] (check photon docs for API), then a script on the player that refs this with photonview.
 
 namespace Com.MyCompany.MyGame
 {
@@ -19,6 +23,9 @@ namespace Com.MyCompany.MyGame
 
         public static GameManager Instance;
 
+        //for scoring
+       
+
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
 
@@ -26,6 +33,7 @@ namespace Com.MyCompany.MyGame
 
 
         #region Photon Callbacks
+
 
         #region Private Methods
 
