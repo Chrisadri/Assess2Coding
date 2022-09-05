@@ -33,16 +33,14 @@ namespace Photon.Pun.Demo.PunBasics
 
         [Tooltip("The Player's UI GameObject Prefab")]
         [SerializeField]
-        public GameObject PlayerUiPrefab;
+        public GameObject playerUiPrefab;
 
 
         #endregion
 
         #region Private Fields
 
-        [Tooltip("The Player's UI GameObject Prefab")]
-        [SerializeField]
-        private GameObject playerUiPrefab;
+      
 
         [Tooltip("The Beams GameObject to control")]
         [SerializeField]
@@ -111,9 +109,9 @@ namespace Photon.Pun.Demo.PunBasics
                 Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
-            if (PlayerUiPrefab != null)
+            if (playerUiPrefab != null)
             {
-                GameObject _uiGo = Instantiate(PlayerUiPrefab);
+                GameObject _uiGo = Instantiate(playerUiPrefab);
                 _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
             }
             else
@@ -233,7 +231,7 @@ namespace Photon.Pun.Demo.PunBasics
         /// <param name="level">Level index loaded</param>
         void CalledOnLevelWasLoaded(int level)
         {
-            GameObject _uiGo = Instantiate(this.PlayerUiPrefab);
+            GameObject _uiGo = Instantiate(this.playerUiPrefab);
             _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
 
             // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
